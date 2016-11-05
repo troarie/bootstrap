@@ -62,7 +62,9 @@
       } else if ($input.prop('type') == 'checkbox') {
         if (($input.prop('checked')) !== this.$element.hasClass('active')) changed = false
         this.$element.toggleClass('active')
-      }
+      } else if (this.$element.prop('type') == "button")
+        this.$element.toggleClass('active')
+
       $input.prop('checked', this.$element.hasClass('active'))
       if (changed) $input.trigger('change')
     } else {
